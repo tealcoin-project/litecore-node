@@ -1,18 +1,24 @@
 {
-  "name": "litecore-node",
-  "description": "Full node with extended capabilities using Litecore and Litecoin Core",
-  "author": "BitPay <dev@bitpay.com>",
+  "name": "litecore-tealcoin-node",
+  "description": "Full node with extended capabilities using Bitcore and Tealcoin Core",
+  "author": {
+    "name": "BitPay",
+    "email": "dev@bitpay.com"
+  },
   "version": "3.1.11",
   "main": "./index.js",
-  "repository": "git://github.com/litecoin-project/litecore-node.git",
-  "homepage": "https://github.com/litecoin-project/litecore-node",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tealcoin-project/litecore-tealcoin-node.git"
+  },
+  "homepage": "https://github.com/tealcoin-project/litecore-tealcoin-node",
   "bugs": {
     "url": "https://github.com/litecoin-project/litecore-node/issues"
   },
   "contributors": [
     {
       "name": "Charlie Lee",
-      "email": "coblee@litecoin.org"
+      "email": "coblee@tealcoin.org"
     },
     {
       "name": "Christopher Jeffrey"
@@ -35,21 +41,20 @@
     }
   ],
   "bin": {
-    "litecore-node": "./bin/litecore-node",
-    "litecoind": "./bin/litecoind"
+    "litecore-tealcoin-node": "./bin/litecore-tealcoin-node",
+    "tealcoind": "./bin/tealcoind"
   },
   "scripts": {
     "preinstall": "./scripts/download",
     "verify": "./scripts/download --skip-bitcoin-download --verify-bitcoin-download",
-    "test": "mocha -R spec --recursive",
-    "regtest": "./scripts/regtest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "jshint": "jshint --reporter=node_modules/jshint-stylish ./lib",
     "coverage": "istanbul cover _mocha -- --recursive",
-    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "tags": [
-    "litecoin",
-    "litecoind"
+    "tealcoin",
+    "tealcoind"
   ],
   "dependencies": {
     "async": "^1.3.0",
@@ -59,15 +64,17 @@
     "errno": "^0.1.4",
     "express": "^4.13.3",
     "liftoff": "^2.2.0",
-    "litecoind-rpc": "^0.7.1",
-    "litecore-lib": "^0.13.22",
+    "tealcoind-rpc": "^0.7.1",
+    "litecore-tealcoin-lib": "^0.13.22",
     "lru-cache": "^4.0.1",
     "mkdirp": "0.5.0",
     "path-is-absolute": "^1.0.0",
     "semver": "^5.0.1",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
-    "zeromq": "^4.2.0"
+    "zeromq": "^4.2.0",
+    "bufferutil": "~1.2.1",
+    "utf-8-validate": "~1.2.1"
   },
   "optionalDependencies": {
     "bufferutil": "~1.2.1",
@@ -86,5 +93,21 @@
     "rimraf": "^2.4.2",
     "sinon": "^1.15.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "coblee",
+      "email": "coblee@tealcoin.org"
+    },
+    {
+      "name": "losh11",
+      "email": "loshan1212@gmail.com"
+    },
+    {
+      "name": "qxchan",
+      "email": "tealcoin.project@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/litecore-tealcoin-node/-/litecore-tealcoin-node-3.1.11.tgz"
 }

@@ -10,22 +10,22 @@ nvm install v4
 
 ## Fork and Download Repositories
 
-To develop litecore-node:
+To develop litecore-tealcoin-node:
 
 ```bash
 cd ~
-git clone git@github.com:<yourusername>/litecore-node.git
-git clone git@github.com:<yourusername>/litecore-lib.git
+git clone git@github.com:<yourusername>/litecore-tealcoin-node.git
+git clone git@github.com:<yourusername>/litecore-tealcoin-lib.git
 ```
 
-To develop litecoin or to compile from source:
+To develop tealcoin or to compile from source:
 
 ```bash
-git clone git@github.com:<yourusername>/litecoin.git
+git clone git@github.com:<yourusername>/tealcoin.git
 git fetch origin <branchname>:<branchname>
 git checkout <branchname>
 ```
-**Note**: See litecoin documentation for building litecoin on your platform.
+**Note**: See tealcoin documentation for building tealcoin on your platform.
 
 
 ## Install Development Dependencies
@@ -46,27 +46,27 @@ brew install zeromq
 ## Install and Symlink
 
 ```bash
-cd litecore-lib
+cd litecore-tealcoin-lib
 npm install
-cd ../litecore-node
+cd ../litecore-tealcoin-node
 npm install
 ```
-**Note**: If you get a message about not being able to download litecoin distribution, you'll need to compile litecoind from source, and setup your configuration to use that version.
+**Note**: If you get a message about not being able to download tealcoin distribution, you'll need to compile tealcoind from source, and setup your configuration to use that version.
 
 
-We now will setup symlinks in `litecore-node` *(repeat this for any other modules you're planning on developing)*:
+We now will setup symlinks in `litecore-tealcoin-node` *(repeat this for any other modules you're planning on developing)*:
 ```bash
 cd node_modules
-rm -rf litecore-lib
-ln -s ~/litecore-lib
+rm -rf litecore-tealcoin-lib
+ln -s ~/litecore-tealcoin-lib
 rm -rf bitcoind-rpc
 ln -s ~/bitcoind-rpc
 ```
 
-And if you're compiling or developing litecoin:
+And if you're compiling or developing tealcoin:
 ```bash
 cd ../bin
-ln -sf ~/litecoin/src/litecoind
+ln -sf ~/tealcoin/src/tealcoind
 ```
 
 ## Run Tests
@@ -78,7 +78,7 @@ npm install mocha -g
 
 To run all test suites:
 ```bash
-cd litecore-node
+cd litecore-tealcoin-node
 npm run regtest
 npm run test
 ```
@@ -102,27 +102,27 @@ cd ~
 mkdir devnode
 cd devnode
 mkdir node_modules
-touch litecore-node.json
+touch litecore-tealcoin-node.json
 touch package.json
 ```
 
-Edit `litecore-node.json` with something similar to:
+Edit `litecore-tealcoin-node.json` with something similar to:
 ```json
 {
   "network": "livenet",
   "port": 3001,
   "services": [
-    "litecoind",
+    "tealcoind",
     "web",
     "insight-api",
     "insight-ui",
     "<additional_service>"
   ],
   "servicesConfig": {
-    "litecoind": {
+    "tealcoind": {
       "spawn": {
-        "datadir": "/home/<youruser>/.litecoin",
-        "exec": "/home/<youruser>/litecoin/src/litecoind"
+        "datadir": "/home/<youruser>/.tealcoin",
+        "exec": "/home/<youruser>/tealcoin/src/tealcoind"
       }
     }
   }
@@ -135,13 +135,13 @@ Setup symlinks for all of the services and dependencies:
 
 ```bash
 cd node_modules
-ln -s ~/litecore-lib
-ln -s ~/litecore-node
+ln -s ~/litecore-tealcoin-lib
+ln -s ~/litecore-tealcoin-node
 ln -s ~/insight-api
 ln -s ~/insight-ui
 ```
 
-Make sure that the `<datadir>/litecoin.conf` has the necessary settings, for example:
+Make sure that the `<datadir>/tealcoin.conf` has the necessary settings, for example:
 ```
 server=1
 whitelist=127.0.0.1
@@ -152,11 +152,11 @@ spentindex=1
 zmqpubrawtx=tcp://127.0.0.1:29332
 zmqpubhashblock=tcp://127.0.0.1:29332
 rpcallowip=127.0.0.1
-rpcuser=litecoin
+rpcuser=tealcoin
 rpcpassword=local321
 ```
 
 From within the `devnode` directory with the configuration file, start the node:
 ```bash
-../litecore-node/bin/litecore-node start
+../litecore-tealcoin-node/bin/litecore-tealcoin-node start
 ```
