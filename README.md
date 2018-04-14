@@ -2,6 +2,8 @@ Bitcore Node
 ============
 
 [![NPM Package](https://img.shields.io/npm/v/litecore-tealcoin-node.svg?style=flat-square)](https://www.npmjs.org/package/litecore-tealcoin-node)
+[![Build Status](https://img.shields.io/travis/litecoin-project/litecore-node.svg?branch=master&style=flat-square)](https://travis-ci.org/litecoin-project/litecore-node)
+[![Coverage Status](https://img.shields.io/coveralls/litecoin-project/litecore-node.svg?style=flat-square)](https://coveralls.io/r/litecoin-project/litecore-node)
 
 A Tealcoin full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [Tealcoin Core with additional indexing](https://github.com/tealcoin-project/litecore-tealcoin) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
 
