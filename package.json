@@ -5,7 +5,7 @@
     "name": "BitPay",
     "email": "dev@bitpay.com"
   },
-  "version": "3.1.11",
+  "version": "3.1.14",
   "main": "./index.js",
   "repository": {
     "type": "git",
@@ -45,8 +45,6 @@
     "tealcoind": "./bin/tealcoind"
   },
   "scripts": {
-    "preinstall": "./scripts/download",
-    "verify": "./scripts/download --skip-bitcoin-download --verify-bitcoin-download",
     "test": "echo \"Error: no test specified\" && exit 1",
     "jshint": "jshint --reporter=node_modules/jshint-stylish ./lib",
     "coverage": "istanbul cover _mocha -- --recursive",
